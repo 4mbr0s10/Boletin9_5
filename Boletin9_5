@@ -1,0 +1,41 @@
+package boletin9_5;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/**
+ *
+ * @author celta
+ */
+public class Boletin9_5 {
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int t = 0;
+        int i = 0;
+        int j = 0;
+        int s = 0;
+        float porcentaje = 0f;
+        do {
+            System.out.println("Introduzca el sueldo del trabajador: ");
+            s = Integer.parseInt(br.readLine());
+            if (s != 0 && s >= 1) {
+                t++;
+            }
+            if (s >= 1000 && s <= 1750) {
+                i++;
+
+            }
+            if (s < 1000 && s > 0) {
+                j++;
+            }
+
+        } while (s != 0);
+        System.out.println("Trabajadores entre 1000 y 1750: " + i);
+        porcentaje = (j * 100) / t;
+        System.out.println("El porcentaje de trabajadores que cobran menos de 1000€ es: " + porcentaje + "%");
+    }
+
+}
